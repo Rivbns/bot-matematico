@@ -5,12 +5,8 @@ import sympy as sp
 import aiohttp
 import os
 import matplotlib.pyplot as plt
-from io import BytesIO
-from PIL import Image, ImageOps
 import numpy as np
 from sympy import simplify, solve, symbols, Eq, diff
-import openai
-from openai.error import RateLimitError
 
 # Crear una instancia de bot
 intents = discord.Intents.default()
@@ -126,15 +122,5 @@ async def check(ctx, link=None):
                 await ctx.send(f"Hubo un error al descargar el archivo: {e}")
     else:
         await ctx.send("Por favor, sube una imagen o proporciona un enlace.")
-
-openai.api_key = 'API KEY'
-
-try:
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": "write a haiku about ai"}])
-except RateLimitError:
-    print("Has excedido tu cuota actual de uso de la API. Por favor, verifica tu plan y detalles de facturación.")
-
+        
 bot.run(settings1["TOKEN"])
