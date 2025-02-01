@@ -1,0 +1,5 @@
+Funcion_lineal_creciente
+Funcion_lineal_decreciente
+Parabola_concavo_para_arriba
+Parabola_concavo_para_abajo
+Funcion_x3
